@@ -10,5 +10,6 @@ class Log(Document):
     des = StringField()
     progress = IntField()
     check_time = StringField()
+    lottery_num = StringField()
 
     add_time = DateTimeField(default=datetime.now)
