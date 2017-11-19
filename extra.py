@@ -145,3 +145,71 @@ class Jiangxi11xuan5:
         num = ','.join(ball)
         return num
 
+# 鲁11选5
+class Lu11xuan5:
+    def __init__(self,response):
+        self.response = response
+        self.id = '107'
+        self.des = '鲁11选5'
+
+
+    def main(self):
+        data = {
+            'id': self.id,
+            'des': self.des,
+            'progress': self.get_progress(),
+            'check_time': self.get_check_time(),
+            'lottery_num': self.get_lottery_num(),
+        }
+        return data
+
+    def get_progress(self):
+        progress_xpath = '//*[@id="js_box_kj_tbody"]/tr[14]/td[2]'
+        progress = self.response.xpath(progress_xpath)[0].xpath('string(.)').strip().strip('期')
+        return progress
+
+    def get_check_time(self):
+        time_xpath = '//*[@id="js_box_kj_tbody"]/tr[14]/td[3]'
+        time_ = self.response.xpath(time_xpath)[0].xpath('string(.)').strip()
+        return time_
+
+    def get_lottery_num(self):
+        ball_xpath = '//*[@id="js_box_kj_tbody"]/tr[14]/td[4]'
+        ball = self.response.xpath(ball_xpath)[0].xpath('string(.)').strip()
+
+        num = ','.join(ball)
+        return num
+
+# 粤11选5
+class Yue11xuan5:
+    def __init__(self,response):
+        self.response = response
+        self.id = '104'
+        self.des = '粤11选5'
+
+    def main(self):
+        data = {
+            'id': self.id,
+            'des': self.des,
+            'progress': self.get_progress(),
+            'check_time': self.get_check_time(),
+            'lottery_num': self.get_lottery_num(),
+        }
+        return data
+
+    def get_progress(self):
+        progress_xpath = '//*[@id="js_box_kj_tbody"]/tr[13]/td[2]'
+        progress = self.response.xpath(progress_xpath)[0].xpath('string(.)').strip().strip('期')
+        return progress
+
+    def get_check_time(self):
+        time_xpath = '//*[@id="js_box_kj_tbody"]/tr[13]/td[3]'
+        time_ = self.response.xpath(time_xpath)[0].xpath('string(.)').strip()
+        return time_
+
+    def get_lottery_num(self):
+        ball_xpath = '//*[@id="js_box_kj_tbody"]/tr[13]/td[4]'
+        ball = self.response.xpath(ball_xpath)[0].xpath('string(.)').strip()
+
+        num = ','.join(ball)
+        return num

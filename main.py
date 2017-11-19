@@ -1,17 +1,21 @@
 from datetime import datetime
 
 from db.settings import mg_lottery
-from extra import Shuangseqiu, Fucai3d, Daletou, Jiangxi11xuan5
+from extra import Shuangseqiu, Fucai3d, Daletou, Jiangxi11xuan5,Lu11xuan5,Yue11xuan5
 from req import get_html
 
 from db.mongoeng import Log
 
 response = get_html()
 
-datas = [Shuangseqiu(response).main(),
-Daletou(response).main(),
-Fucai3d(response).main(),
-Jiangxi11xuan5(response).main()]
+datas = [
+    Shuangseqiu(response).main(),
+    Daletou(response).main(),
+    Fucai3d(response).main(),
+    Jiangxi11xuan5(response).main(),
+    Lu11xuan5(response).main(),
+    Yue11xuan5(response).main(),
+         ]
 
 
 
