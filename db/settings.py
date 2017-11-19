@@ -8,7 +8,8 @@ MQ_COLL = 'lottery'
 # mongo
 # MG_HOST = '108.61.203.110'
 MG_HOST = 'localhost'
-MG_PORT = 27017
+# MG_PORT = 27017
+MG_PORT = 29999
 MG_PASSWORD = None
 MG_COLL = 'lottery'
 
